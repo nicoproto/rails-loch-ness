@@ -15,3 +15,8 @@
  */
 
 @import "bootstrap/scss/bootstrap";
+@import "components/index";
+
+h1 {
+  color: #315545;
+}
