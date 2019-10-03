@@ -2,16 +2,28 @@
   height: 100vh;
   display: flex;
 
+  .left-hero, .right-hero {
+    display: flex;
+    align-items: center;
+  }
+
   .left-hero {
     width: 60%;
-    background-color: #315545;
+    background-color: var(--green);
+    padding: 0 12%;
 
     h1 {
-      color: white;
+      color: var(--white);
     }
   }
 
   .right-hero {
     width: 40%;
+    padding: 10% 6% 0 6%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
