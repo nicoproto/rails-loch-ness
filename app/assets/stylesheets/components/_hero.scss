@@ -1,0 +1,17 @@
+.hero {
+  height: 100vh;
+  display: flex;
+
+  .left-hero {
+    width: 60%;
+    background-color: #315545;
+
+    h1 {
+      color: white;
+    }
+  }
+
+  .right-hero {
+    width: 40%;
+  }
+}
