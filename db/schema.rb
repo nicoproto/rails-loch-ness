@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_01_174242) do
+ActiveRecord::Schema.define(version: 2019_10_03_050658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,11 +50,9 @@ ActiveRecord::Schema.define(version: 2019_10_01_174242) do
     t.string "status"
     t.bigint "monster_id"
     t.bigint "user_id"
-    t.bigint "review_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["monster_id"], name: "index_reservations_on_monster_id"
-    t.index ["review_id"], name: "index_reservations_on_review_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
@@ -65,7 +63,9 @@ ActiveRecord::Schema.define(version: 2019_10_01_174242) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "reservation_id", null: false
     t.index ["monster_id"], name: "index_reviews_on_monster_id"
+    t.index ["reservation_id"], name: "index_reviews_on_reservation_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -87,8 +87,8 @@ ActiveRecord::Schema.define(version: 2019_10_01_174242) do
   add_foreign_key "messages", "users"
   add_foreign_key "monsters", "users"
   add_foreign_key "reservations", "monsters"
-  add_foreign_key "reservations", "reviews"
   add_foreign_key "reservations", "users"
   add_foreign_key "reviews", "monsters"
+  add_foreign_key "reviews", "reservations"
   add_foreign_key "reviews", "users"
 end
