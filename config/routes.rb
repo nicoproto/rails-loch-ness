@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[new create show index]
   end
   resources :reservations, only: %i[new create show edit update]
-  resources :messages, only: %i[new create]
+  resources :conversations, only: %i[new create show] do
+    resources :messages, only: %i[new create]
+  end
 end
