@@ -1,0 +1,14 @@
+<% @monsters.each do |monster| %>
+  <div class="card mb-5">
+    <img src='<%= image_path monster.photo %>' class="card-img-top" alt="<%= monster.name %>">
+    <div class="card-body">
+      <h4 class="card-title">
+        <%= link_to monster.name, monster_path(monster), class: "stretched-link" %>
+        </h4>
+      <p class="card-text"><%= monster.description %></p>
+      <h6 class="card-text price"> <strong><%= monster.price %> € </strong>/ day</h6>
+      <!-- TODO - UPDATE FIELD, THERE'S NO ADDRESS FIELD -->
+      <h6 class="card-text address"><strong>Address: </strong>Paris</h6>
+    </div>
+  </div>
+<% end %>

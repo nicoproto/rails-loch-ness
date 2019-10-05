@@ -16,7 +16,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700|Open+Sans:400,700&display=swap");
 
 @import "bootstrap/scss/bootstrap";
-@import "components/index";
 
 :root {
   --green: #315545;
@@ -31,6 +30,16 @@ h1 {
   font-family: var(--headers-font);
 }
 
+h4 {
+  color: var(--green);
+  font-family: var(--headers-font);
+  font-weight: 800;
+}
+
 body {
   font-family: var(--body-font);
+}
+
+.w-65 {
+ width: 65%;
 }

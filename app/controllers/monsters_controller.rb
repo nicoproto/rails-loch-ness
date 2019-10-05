@@ -1,5 +1,7 @@
 class MonstersController < ApplicationController
-  def index; end
+  def index
+    @monsters = Monster.all
+  end
 
   def new; end
 
