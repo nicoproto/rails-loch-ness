@@ -1,0 +1,22 @@
+<div class="ln-navbar">
+  <%= link_to "/", class: "" do %>
+      <%= image_tag "https://res.cloudinary.com/syrashid/image/upload/v1565961125/LogoInvert_idudro.png" %>
+  <% end %>
+    <% if user_signed_in? %>
+      <li class="nav-item dropdown">
+        <%= image_tag current_user.avatar, height:40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <!-- TODO UPDATE PATHS -->
+          <%= link_to "Add Monster", new_monster_path, class: "dropdown-item" %>
+          <%= link_to "Booked Monsters", reservations_path, class: "dropdown-item"  %>
+          <%= link_to "Dashboard", root_path, class: "dropdown-item" %>
+          <%= link_to 'Edit Profile',edit_user_registration_path, class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
+    <% end %>
+</div>

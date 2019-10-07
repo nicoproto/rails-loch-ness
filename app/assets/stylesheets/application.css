@@ -13,5 +13,24 @@
  *= require_tree .
  *= require_self
  */
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700|Open+Sans:400,700&display=swap");
 
 @import "bootstrap/scss/bootstrap";
+@import "components/index";
+
+:root {
+  --green: #315545;
+  --white: #FFFFFF;
+  --headers-font: "Open Sans";
+  --body-font: "Nunito";
+  --basepx: 6px;
+}
+
+h1 {
+  color: var(--green);
+  font-family: var(--headers-font);
+}
+
+body {
+  font-family: var(--body-font);
+}
