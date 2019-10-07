@@ -1,6 +1,13 @@
 class MonstersController < ApplicationController
   def index
     @monsters = Monster.all
+
+    @markers = @monsters.map do |monster|
+      {
+        lat: monster.latitude,
+        lng: monster.longitude
+      }
+    end
   end
 
   def new; end
