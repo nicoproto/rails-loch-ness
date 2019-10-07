@@ -6,4 +6,7 @@ class Monster < ApplicationRecord
   validates :photo, presence: true
   validates :price, presence: true
   validates :description, length: { in: 50..500 }
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
