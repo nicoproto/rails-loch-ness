@@ -1,0 +1,13 @@
+<%= render 'shared/navbar' %>
+
+<div class="d-flex row index-page">
+  <div class="cards-container col-12 col-sm-6 col-lg-7">
+    <div class="row">
+      <%= render 'shared/monsters_partial', monsters: @monsters %>
+    </div>
+  </div>
+
+  <div class="map-box col-12 col-sm-6 col-lg-5">
+    <h1>Space for map</h1>
+  </div>
+</div>

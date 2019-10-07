@@ -1,0 +1,10 @@
+<% monsters.each do |monster|  %>
+  <div class="card col-12 col-lg-6 col-xl-4">
+    <img src="<%= monster.photo %>" class="card-img-top" alt="<%= monster.name %>">
+    <div class="card-body">
+      <h5 class="card-title"><%= monster.name %></h5>
+      <h6 class="card-text"><%= monster.description %></h6>
+      <p class="card-text"><%= monster.price %>$ / per Night</p>
+    </div>
+  </div>
+<% end %>

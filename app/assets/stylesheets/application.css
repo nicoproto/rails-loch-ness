@@ -17,6 +17,7 @@
 
 @import "bootstrap/scss/bootstrap";
 @import "components/index";
+@import "pages/index";
 
 :root {
   --green: #315545;
