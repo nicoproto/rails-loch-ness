@@ -14,11 +14,16 @@ class MonstersController < ApplicationController
     end
   end
 
-  def new; end
+  def new
+    @monster = Monster.new
+  end
 
   def create; end
 
-  def show; end
+  def show
+    @monster = Monster.find(params[:id])
+    @reservation = Reservation.new
+  end
 
   def edit; end
 
