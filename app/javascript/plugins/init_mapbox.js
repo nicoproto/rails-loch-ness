@@ -1,12 +1,11 @@
-import mapboxgl from 'mapbox-gl';
-
 const mapElement = document.getElementById('map');
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/mapbox/dark-v9',
+    attributionControl: false
   });
 };
 

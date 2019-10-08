@@ -1,5 +1,5 @@
 <%= form_tag monsters_path, method: :get, class: "d-flex mb-5" do %>
-  <%= text_field_tag :query, params[:query], class: "flex-grow-1 searchbar-input", placeholder: "Search" %>
+  <%= text_field_tag :query, params[:query], class: "flex-grow-1 searchbar-input", placeholder: "Search", name: 'location'%>
   <%= button_tag(type: "submit", class: "searchbar-btn") do %>
     <i class="fas fa-search"></i>
   <% end %>

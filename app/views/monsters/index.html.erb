@@ -6,12 +6,8 @@
       <%= render 'shared/monsters_partial', monsters: @monsters %>
     </div>
   </div>
-
-  <div class="map-box col-12 col-sm-6 col-lg-5"
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+<div class="map-box col-12 col-sm-6 col-lg-5"
+  id="map"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>

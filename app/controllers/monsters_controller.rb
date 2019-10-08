@@ -1,6 +1,10 @@
 class MonstersController < ApplicationController
   def index
-    @monsters = Monster.all
+    if params[:location].present?
+      @monsters = Monster.near(params[:location], 100)
+    else
+      @monsters = Monster.geocoded
+    end
 
     @markers = @monsters.map do |monster|
       {
