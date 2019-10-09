@@ -6,7 +6,7 @@
         Filter By Price
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a href=# class="dropdown-item"> Price: High to Low </a>
+        <%= link_to "Price: High to Low", price_dsc_path(location: params[:location]), class: "dropdown-item", remote: true %>
         <%= link_to "Price: Low to High", price_asc_path(location: params[:location]), class: "dropdown-item", remote: true %>
       </div>
     </div>
