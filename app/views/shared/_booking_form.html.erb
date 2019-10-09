@@ -1,11 +1,13 @@
 <div class="border rounded-lg p-3 booking-form">
   <%= simple_form_for [@monster, @reservation] do |d| %>
     <div class="row">
-      <div class="col-sm-6">
-        <%= d.input :start_date, html5: true %>
-      </div>
-      <div class="col-sm-6">
-        <%= d.input :end_date, html5: true %>
+      <div class="col-sm-12">
+        <%= d.input :start_date,
+        html5: true,
+        input_html: {
+          id: "datepicker",
+          placeholder: "Please select Date Range"
+        } %>
       </div>
     </div>
       <div class="d-flex justify-content-between">
