@@ -10,5 +10,9 @@
   &:hover{
     background-color: var(--light_grey);
   }
+}
 
+.cards-container {
+  height: 86vh;
+  overflow: scroll;
 }

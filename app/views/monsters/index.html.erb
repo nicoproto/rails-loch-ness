@@ -1,13 +1,33 @@
-<%= render 'shared/navbar' %>
 
-<div class="d-flex row index-page">
-  <div class="cards-container col-12 col-sm-6 col-lg-7">
-    <div class="row">
-      <%= render 'shared/monsters_partial', monsters: @monsters %>
+<div class="index-page">
+  <div class="filter-bar d-flex">
+    <div class="dropdown">
+      <button class="primaryButton dropdown-toggle mr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filter By Price
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a href=# class="dropdown-item"> Price: High to Low </a>
+        <%= link_to "Price: Low to High", price_asc_path(location: params[:location]), class: "dropdown-item", remote: true %>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="primaryButton dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filter By Reviews
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a href=# class="dropdown-item"> Review: High to Low </a>
+        <a href=# class="dropdown-item"> Review: Low to High </a>
+      </div>
     </div>
   </div>
-<div class="map-box col-12 col-sm-6 col-lg-5"
-  id="map"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  <div class="d-flex row">
+    <div class="cards-container col-12 col-sm-6 col-lg-7 row">
+        <%= render 'shared/monsters_partial', monsters: @monsters %>
+    </div>
+    <div class="map-box col-12 col-sm-6 col-lg-5"
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
 </div>

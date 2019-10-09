@@ -30,4 +30,15 @@ class MonstersController < ApplicationController
   def update; end
 
   def destroy; end
+
+  def price_filter_asc
+    @monsters = Monster.order(price: :asc)
+    @monsters = @monsters.near(params[:location], 100) if params[:location].present?
+  end
+
+  def price_filter_dsc; end
+
+  def review_filter_asc;  end
+
+  def review_filter_asc;  end
 end
