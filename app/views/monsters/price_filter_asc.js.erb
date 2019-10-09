@@ -1,0 +1,8 @@
+function updateDom()  {
+  const cards = document.querySelector('.cards-container');
+
+  const html = '<%= j render "shared/monsters_partial", monsters: @monsters %>';
+  cards.innerHTML = html
+}
+
+updateDom()

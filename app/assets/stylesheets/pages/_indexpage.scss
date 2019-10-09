@@ -1,15 +1,10 @@
 .index-page {
   padding-top: 14vh;
+}
 
-  .cards-container {
-    height: 86vh;
-    overflow: scroll;
-  }
-
-  .map-box {
-    height: 86vh;
-    padding: 0 !important;
-  }
+.map-box {
+  height: 86vh;
+  padding: 0 !important;
 }
 
 @media (max-width: 576px) {
