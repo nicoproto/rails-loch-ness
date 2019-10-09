@@ -1,25 +1,6 @@
 
 <div class="index-page">
-  <div class="filter-bar d-flex">
-    <div class="dropdown">
-      <button class="primaryButton dropdown-toggle mr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Filter By Price
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to "Price: High to Low", price_dsc_path(location: params[:location]), class: "dropdown-item", remote: true %>
-        <%= link_to "Price: Low to High", price_asc_path(location: params[:location]), class: "dropdown-item", remote: true %>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="primaryButton dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Filter By Reviews
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a href=# class="dropdown-item"> Review: High to Low </a>
-        <a href=# class="dropdown-item"> Review: Low to High </a>
-      </div>
-    </div>
-  </div>
+  <%= render 'shared/filter_bar' %>
 
   <div class="d-flex row">
     <div class="cards-container col-12 col-sm-6 col-lg-7 row">
