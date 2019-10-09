@@ -1,5 +1,3 @@
-require 'pry'
-
 class Review < ApplicationRecord
   after_create :update_average
 
