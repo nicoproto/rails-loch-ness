@@ -1,0 +1,20 @@
+<div class="border rounded-lg p-3 booking-form">
+  <%= simple_form_for [@monster, @reservation] do |d| %>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= d.input :start_date, html5: true %>
+      </div>
+      <div class="col-sm-6">
+        <%= d.input :end_date, html5: true %>
+      </div>
+    </div>
+      <div class="d-flex justify-content-between">
+        <p><strong>Total: &nbsp</strong></p>
+        <div class="d-flex">
+          <h5><%= 2 * @monster.price %></h5>
+          <h5>&nbsp€</h5>
+        </div>
+      </div>
+      <%= d.submit class: "primaryButton btn-block" %>
+  <% end %>
+</div>

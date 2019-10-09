@@ -1,0 +1,39 @@
+<div class="container row show-page d-flex m-auto">
+  <!-- IMAGE -->
+  <div class="col-6">
+    <img src="<%= @monster.photo %>" class="w-100" alt="<%= @monster.name %>">
+  </div>
+  <!-- INFO AND BOOKING -->
+  <div class="col-6">
+    <!-- INFO -->
+    <h4 class="mb-3"><%= @monster.name %></h4>
+    <h5 class="d-inline"><%= @monster.price %> € </h5>
+    <p class="d-inline">/ per night</p>
+    <p class="mt-3"><strong>Description:</strong> <%= @monster.description %></p>
+    <!-- BOOKING -->
+    <%= render 'shared/booking_form' %>
+  </div>
+    <!-- REVIEWS -->
+  <div class="col-12 mt-3">
+    <% if @monster.reviews.count > 0 %>
+      <% @monster.reviews.each do |review|%>
+      <div class="card col mb-3">
+        <div class="card-body">
+          <blockquote class="mb-0">
+            <p><%= review.text %></p>
+            <footer class="blockquote-footer">
+              <%= review.user.name.capitalize %>'s review: <cite title="Source Title"><%= review.integer %> / 5</cite>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+      <% end %>
+    <% else %>
+      <div class="card col">
+        <div class="card-body">
+          <p> Don't have any review yet!</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
