@@ -1,0 +1,14 @@
+.stretched-link {
+  color: var(--green);
+  &:hover {
+    text-decoration: none;
+    color: var(--green);
+  }
+}
+
+.card {
+  &:hover{
+    background-color: var(--light_grey);
+  }
+
+}
