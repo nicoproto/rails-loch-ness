@@ -1,0 +1,10 @@
+<div class="container index-page">
+  <% if @reservations.count > 0 %>
+    <%= render 'shared/reservations_partial' %>
+  <% else %>
+    <h5 class="mt-5">You don't have any monster reservations yet.</h5>
+    <%= link_to monsters_path do %>
+      <i class="fas fa-arrow-circle-left mr-1"></i> Search for monsters
+    <% end %>
+  <% end %>
+</div>
