@@ -1,3 +1,5 @@
+require 'pry'
+
 class MonstersController < ApplicationController
   def index
     if params[:location].present?
@@ -41,7 +43,10 @@ class MonstersController < ApplicationController
     @monsters = @monsters.near(params[:location], 100) if params[:location].present?
   end
 
-  def review_filter_asc;  end
+  def review_filter_asc
+    @monsters = Monster.order(avg_reviews: :asc)
 
-  def review_filter_asc;  end
+  end
+
+  def review_filter_dsc;  end
 end
