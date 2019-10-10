@@ -40,6 +40,11 @@ class ReservationsController < ApplicationController
 
   def update; end
 
+  def destroy
+    Reservation.destroy(params[:id])
+    redirect_to reservations_path
+  end
+
   private
 
   def reservation_strong_params
