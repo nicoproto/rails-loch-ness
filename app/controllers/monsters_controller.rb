@@ -1,5 +1,3 @@
-require 'pry'
-
 class MonstersController < ApplicationController
   def index
     if params[:location].present?
@@ -9,10 +7,7 @@ class MonstersController < ApplicationController
     end
 
     @markers = @monsters.map do |monster|
-      {
-        lat: monster.latitude,
-        lng: monster.longitude
-      }
+      { lat: monster.latitude, lng: monster.longitude }
     end
   end
 
@@ -45,8 +40,11 @@ class MonstersController < ApplicationController
 
   def review_filter_asc
     @monsters = Monster.order(avg_reviews: :asc)
-
+    @monsters = @monsters.near(params[:location], 100) if params[:location].present?
   end
 
-  def review_filter_dsc;  end
+  def review_filter_dsc
+    @monsters = Monster.order(avg_reviews: :desc)
+    @monsters = @monsters.near(params[:location], 100) if params[:location].present?
+  end
 end
