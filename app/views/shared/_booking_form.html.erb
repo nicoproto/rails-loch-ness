@@ -13,7 +13,7 @@
       <div class="d-flex justify-content-between">
         <p><strong>Total: &nbsp</strong></p>
         <div class="d-flex">
-          <h5><%= 2 * @monster.price %></h5>
+          <h5 id="total-price" ><%= @monster.price.round %></h5>
           <h5>&nbsp€</h5>
         </div>
       </div>

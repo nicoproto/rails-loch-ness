@@ -7,7 +7,8 @@
   <div class="col-6">
     <!-- INFO -->
     <h4 class="mb-3"><%= @monster.name %></h4>
-    <h5 class="d-inline"><%= @monster.price %> € </h5>
+    <h5 id="item-price" class="d-inline"><%= @monster.price.round %></h5>
+    <h5 class="d-inline">€</h5>
     <p class="d-inline">/ per night</p>
     <p class="mt-3"><strong>Description:</strong> <%= @monster.description %></p>
     <!-- BOOKING -->
