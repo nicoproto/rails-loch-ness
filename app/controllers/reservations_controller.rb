@@ -1,6 +1,13 @@
 class ReservationsController < ApplicationController
   def new; end
 
+  def index
+    @reservations = Reservation.where('user_id = ?', current_user.id)
+    @pending_reservations = Reservation.where('status = ? AND user_id = ?', 'pending', current_user.id)
+    @accepted_reservations = Reservation.where('status = ? AND user_id = ?', 'accepted', current_user.id)
+    @rejected_reservations = Reservation.where('status = ? AND user_id = ?', 'rejected', current_user.id)
+  end
+
   def create
     @dates = reservation_strong_params[:start_date].split(" to ")
 
