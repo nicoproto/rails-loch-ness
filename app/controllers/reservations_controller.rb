@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
-  before_action :set_monster, only: [:edit, :update]
   before_action :set_reservation, only: [:show, :edit, :update]
+  before_action :set_monster, only: [:edit, :update]
 
   def new; end
 
