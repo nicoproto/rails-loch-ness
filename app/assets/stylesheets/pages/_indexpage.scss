@@ -1,5 +1,13 @@
 .index-page {
   padding-top: 14vh;
+
+  .card-body {
+    img {
+      max-height: 25vh;
+      max-width: 40vh;
+      object-fit: cover;
+    }
+  }
 }
 
 .map-box {

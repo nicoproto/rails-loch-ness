@@ -13,8 +13,8 @@
       Filter By Reviews
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a href=# class="dropdown-item"> Review: High to Low </a>
-      <a href=# class="dropdown-item"> Review: Low to High </a>
+      <%= link_to "Review: High to Low", reviews_dsc_path(location: params[:location]), class: "dropdown-item", remote: true %>
+      <%= link_to "Review: Low to High", reviews_asc_path(location: params[:location]), class: "dropdown-item", remote: true %>
     </div>
   </div>
 </div>

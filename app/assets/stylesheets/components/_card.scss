@@ -16,3 +16,10 @@
   height: 86vh;
   overflow: scroll;
 }
+
+.show-page, .index-page {
+  .card-header {
+    background: var(--green);
+    color: var(--white);
+  }
+}
