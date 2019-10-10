@@ -7,6 +7,20 @@
       </h5>
       <h6 class="card-text"><%= monster.description %></h6>
       <p class="card-text"><%= monster.price %>$ / per Night</p>
+      <div class="rating-stars">
+        <% monster.avg_reviews.round.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        <% (5-monster.avg_reviews.round).times do %>
+          <i class="far fa-star"></i>
+        <% end %>
+
+      </div>
+      <div class="rating-info d-flex justify-content-between">
+        <p>Rating: <%= monster.avg_reviews %></p>
+        <p><%= monster.reviews.count %> Reviews</p>
+
+      </div>
     </div>
   </div>
 <% end %>

@@ -7,7 +7,10 @@ class MonstersController < ApplicationController
     end
 
     @markers = @monsters.map do |monster|
-      { lat: monster.latitude, lng: monster.longitude }
+      {
+        lat: monster.latitude,
+        lng: monster.longitude
+      }
     end
   end
 
