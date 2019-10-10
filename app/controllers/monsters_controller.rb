@@ -41,7 +41,13 @@ class MonstersController < ApplicationController
     @monsters = @monsters.near(params[:location], 100) if params[:location].present?
   end
 
-  def review_filter_asc;  end
+  def review_filter_asc
+    @monsters = Monster.order(avg_reviews: :asc)
+    @monsters = @monsters.near(params[:location], 100) if params[:location].present?
+  end
 
-  def review_filter_asc;  end
+  def review_filter_dsc
+    @monsters = Monster.order(avg_reviews: :desc)
+    @monsters = @monsters.near(params[:location], 100) if params[:location].present?
+  end
 end
