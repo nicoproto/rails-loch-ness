@@ -14,3 +14,9 @@ flatpickr("#datepicker", {
       total_price.innerText = Math.round(booking_time * item_price.innerText);
     }
 });
+
+flatpickr("datesearch", {
+  mode: 'range',
+  minDate: 'today',
+  dateFormat: "Y-m-d"
+});
