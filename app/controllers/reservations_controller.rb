@@ -1,18 +1,18 @@
 class ReservationsController < ApplicationController
+  before_action :set_reservation, only: [:show, :edit, :update]
+  before_action :set_monster, only: [:edit, :update]
+
   def new; end
 
   def index
     @reservations = Reservation.where('user_id = ?', current_user.id)
-    @pending_reservations = Reservation.where('status = ? AND user_id = ?', 'pending', current_user.id)
-    @accepted_reservations = Reservation.where('status = ? AND user_id = ?', 'accepted', current_user.id)
-    @rejected_reservations = Reservation.where('status = ? AND user_id = ?', 'rejected', current_user.id)
   end
 
   def create
     @dates = reservation_strong_params[:start_date].split(" to ")
-
     @start_date = Date.parse(@dates[0])
     @end_date = Date.parse(@dates[1])
+
     @monster = Monster.find(params[:monster_id])
     @total_price = @monster.price * (@end_date - @start_date + 1)
 
@@ -25,26 +25,14 @@ class ReservationsController < ApplicationController
       total_price: @total_price
     )
 
-    if @reservation.save
-      redirect_to reservation_path(@reservation)
-    else
-      render :new
-    end
+    @reservation.save ? (redirect_to reservation_path(@reservation)) : (render :new)
   end
 
-  def show
-    @reservation = Reservation.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @reservation = Reservation.find(params[:id])
-    @monster = Monster.find(@reservation.monster_id)
-  end
+  def edit; end
 
   def update
-    @reservation = Reservation.find(params[:id])
-    @monster = Monster.find(@reservation.monster_id)
-
     @dates = reservation_strong_params[:start_date].split(" to ")
     @start_date = Date.parse(@dates[0])
     @end_date = Date.parse(@dates[1])
@@ -53,11 +41,7 @@ class ReservationsController < ApplicationController
     @reservation.start_date = @start_date
     @reservation.end_date = @end_date
 
-    if @reservation.save
-      redirect_to reservations_path
-    else
-      render :new
-    end
+    @reservation.save ? (redirect_to reservations_path) : (render :new)
   end
 
   def destroy
@@ -73,5 +57,13 @@ class ReservationsController < ApplicationController
 
   def rent_days(from, to)
     Date.parse(to).mjd - Date.parse(from).mjd
+  end
+
+  def set_reservation
+    @reservation = Reservation.find(params[:id])
+  end
+
+  def set_monster
+    @monster = Monster.find(@reservation.monster_id)
   end
 end
