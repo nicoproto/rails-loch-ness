@@ -17,6 +17,8 @@
 
         <!-- EDIT - DELETE -->
         <div class="p-3 d-flex flex-column">
+          <% if reservation.status == 'confirmed' %>
+          <% else %>
             <%= link_to edit_reservation_path(reservation), class: "secondaryButton mb-3" do %>
               <i class="fas fa-pencil-alt"></i> Edit
             <% end %>
@@ -25,6 +27,7 @@
                 <i class="fas fa-trash-alt"></i> Delete
             <% end %>
           </div>
+          <% end %>
         </div>
 
       </div>

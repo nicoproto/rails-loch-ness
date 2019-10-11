@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:show, :edit, :update]
+  before_action :set_reservation, only: [:show, :edit, :update, :accept_reservation, :reject_reservation]
   before_action :set_monster, only: [:edit, :update]
 
   def new; end
@@ -47,6 +47,18 @@ class ReservationsController < ApplicationController
   def destroy
     Reservation.destroy(params[:id])
     redirect_to reservations_path
+  end
+
+  def accept_reservation
+    @reservation.status = 'confirmed'
+    @reservation.save
+    redirect_to dashboard_path
+  end
+
+  def reject_reservation
+    @reservation.status = 'denied'
+    @reservation.save
+    redirect_to dashboard_path
   end
 
   private
