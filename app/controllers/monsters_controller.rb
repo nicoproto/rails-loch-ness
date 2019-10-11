@@ -2,6 +2,12 @@ class MonstersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
+    if params[:serach_date].present?
+      dates = params[:search_date].split(" to ")
+      start_date = Date.parse(dates[0])
+      end_date = Date.parse(dates[1])
+    end
+
     if params[:location].present?
       @monsters = Monster.near(params[:location], 100)
     else

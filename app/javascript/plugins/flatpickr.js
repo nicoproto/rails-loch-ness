@@ -15,7 +15,7 @@ flatpickr("#datepicker", {
     }
 });
 
-flatpickr("datesearch", {
+flatpickr("#datesearch", {
   mode: 'range',
   minDate: 'today',
   dateFormat: "Y-m-d"
