@@ -4,8 +4,17 @@ class MonstersController < ApplicationController
 
   def index
     @monsters = Monster.geocoded
-    @monsters = @monsters.near(params[:location], 100) if params[:location].present?
-    @monsters = filter_by_date(params[:search_date]) if params[:search_date].present?
+
+    if params[:location].present?
+      @monsters = @monsters.near(params[:location], 100)
+      session[:location] = params[:location]
+    end
+
+    if params[:search_date].present?
+      @monsters = filter_by_date(params[:search_date])
+      session[:search_date] = params[:search_date]
+    end
+
     @markers = @monsters.map do |monster|
       {
         lat: monster.latitude,
@@ -33,27 +42,26 @@ class MonstersController < ApplicationController
 
   def price_filter_asc
     @monsters = Monster.order(price: :asc)
-    @monsters = @monsters.near(params[:location], 100) if params[:location].present?
-    @monsters = filter_by_date(params[:search_date]) if params[:search_date].present?
-    binding.pry
+    @monsters = @monsters.near(session[:location], 100) if session[:location].present?
+    @monsters = filter_by_date(session[:search_date]) if session[:search_date].present?
   end
 
   def price_filter_dsc
     @monsters = Monster.order(price: :desc)
-    @monsters = @monsters.near(params[:location], 100) if params[:location].present?
-    @monsters = filter_by_date(params[:search_date]) if params[:search_date].present?
+    @monsters = @monsters.near(session[:location], 100) if session[:location].present?
+    @monsters = filter_by_date(session[:search_date]) if session[:search_date].present?
   end
 
   def review_filter_asc
     @monsters = Monster.order(avg_reviews: :asc)
-    @monsters = @monsters.near(params[:location], 100) if params[:location].present?
-    @monsters = filter_by_date(params[:search_date]) if params[:search_date].present?
+    @monsters = @monsters.near(session[:location], 100) if session[:location].present?
+    @monsters = filter_by_date(session[:search_date]) if session[:search_date].present?
   end
 
   def review_filter_dsc
     @monsters = Monster.order(avg_reviews: :desc)
-    @monsters = @monsters.near(params[:location], 100) if params[:location].present?
-    @monsters = filter_by_date(params[:search_date]) if params[:search_date].present?
+    @monsters = @monsters.near(session[:location], 100) if session[:location].present?
+    @monsters = filter_by_date(session[:search_date]) if session[:search_date].present?
   end
 
   private
