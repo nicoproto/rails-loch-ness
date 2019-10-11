@@ -68,8 +68,7 @@ class MonstersController < ApplicationController
 
   def filter_by_date(date_string)
     dates = date_string.split(' to ')
-    start_date = Date.parse(dates[0])
-    end_date = Date.parse(dates[1])
+    start_date, end_date = Date.parse(dates[0]), Date.parse(dates[1])
 
     reservations = @monsters.collect(&:reservations).flatten
     conflict_reservations = reservations.select do |reservation|
