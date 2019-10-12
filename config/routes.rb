@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :reservations, only: %i[new create]
   end
   resources :reservations, only: %i[index show edit update destroy]
-  resources :conversations, only: %i[new create show] do
+  resources :conversations, only: %i[index new create show] do
     resources :messages, only: %i[new create]
   end
   get '/dashboard', to: 'dashboards#show'
