@@ -17,4 +17,3 @@ class Review < ApplicationRecord
     monster.save
   end
 end
-

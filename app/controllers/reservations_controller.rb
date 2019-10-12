@@ -6,6 +6,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.where('user_id = ?', current_user.id)
+    update_completed_reservations
   end
 
   def create
@@ -77,5 +78,14 @@ class ReservationsController < ApplicationController
 
   def set_monster
     @monster = Monster.find(@reservation.monster_id)
+  end
+
+  def update_completed_reservations
+    @reservations.each do |reservation|
+      if reservation.end_date < Date.today
+        reservation.status = 'completed'
+        reservation.save
+      end
+    end
   end
 end
