@@ -1,10 +1,10 @@
 <div class="container row show-page d-flex m-auto">
   <!-- IMAGE -->
-  <div class="col-6">
+  <div class="col-12 col-lg-6">
     <img src="<%= @monster.photo %>" class="w-100" alt="<%= @monster.name %>">
   </div>
   <!-- INFO AND BOOKING -->
-  <div class="col-6">
+  <div class="col-12 col-lg-6">
     <!-- INFO -->
     <div class="d-flex mb-3 align-items-center">
       <h2 class=" mr-3 mb-0"><%= @monster.name %></h2>
@@ -24,6 +24,7 @@
     <!-- BOOKING -->
     <%= render 'shared/booking_form' %>
   </div>
+
     <!-- REVIEWS -->
   <div class="col-12 mt-3">
     <h4 class="mb-4 mt-4"><%= @monster.name %>'s reviews</h4>
@@ -47,5 +48,9 @@
         </div>
       </div>
     <% end %>
+    <div class="row">
+      <h4 class="mb-3 mt-3">Any Further Questions?</h4>
+      <%#= link_to ,  %>
+    </div>
   </div>
 </div>
