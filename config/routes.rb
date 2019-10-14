@@ -6,9 +6,8 @@ Rails.application.routes.draw do
     resources :reservations, only: %i[new create]
   end
   resources :reservations, only: %i[index show edit update destroy]
-  resources :conversations, only: %i[index new create show] do
-    resources :messages, only: %i[new create]
-  end
+  resources :conversations, only: %i[index new create show]
+  resources :messages, only: %i[new create]
   get '/dashboard', to: 'dashboards#show'
   get '/price_asc', to: 'monsters#price_filter_asc'
   get '/price_dsc', to: 'monsters#price_filter_dsc'

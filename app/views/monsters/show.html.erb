@@ -6,16 +6,22 @@
   <!-- INFO AND BOOKING -->
   <div class="col-12 col-lg-6">
     <!-- INFO -->
-    <div class="d-flex mb-3 align-items-center">
-      <h2 class=" mr-3 mb-0"><%= @monster.name %></h2>
-      <div class="rating-stars">
-        <% @monster.avg_reviews.round.times do %>
-          <i class="fas fa-star"></i>
-        <% end %>
-        <% (5-@monster.avg_reviews.round).times do %>
-          <i class="far fa-star"></i>
-        <% end %>
+    <div class="d-flex mb-3 justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <h2 class=" mr-3 mb-0"><%= @monster.name %></h2>
+        <div class="rating-stars">
+          <% @monster.avg_reviews.round.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <% (5-@monster.avg_reviews.round).times do %>
+            <i class="far fa-star"></i>
+          <% end %>
+        </div>
       </div>
+      <!-- CONTACT HOST -->
+      <%= link_to 'Contact Host',
+      new_message_path,
+      class: "primaryButton py-2 px-4 align-middle" %>
     </div>
     <h5 id="item-price" class="d-inline"><%= @monster.price.round %></h5>
     <h5 class="d-inline">€</h5>
@@ -48,9 +54,5 @@
         </div>
       </div>
     <% end %>
-    <div class="row">
-      <h4 class="mb-3 mt-3">Any Further Questions?</h4>
-      <%#= link_to ,  %>
-    </div>
   </div>
 </div>
