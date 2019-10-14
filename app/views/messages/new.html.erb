@@ -1,0 +1,13 @@
+<div class="container col-12 col-md-8 col-lg-6 review-form">
+  <h2 class="mb-3">Leave a question for the owner</h2>
+
+  <%= simple_form_for [@message] do |f| %>
+    <%= f.input :text,
+    placeholder: "Ask anything you would like to know about the monster...",
+    label: false,
+    :input_html => { :rows => 7 , :style => 'width: 100%'}
+     %>
+    <%= f.submit class: "primaryButton btn-block" %>
+  <% end %>
+
+</div>

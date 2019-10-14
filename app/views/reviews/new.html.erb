@@ -1,0 +1,18 @@
+<div class="container col-12 col-md-8 col-lg-6 review-form">
+  <h2 class="mb-3">How did you enjoy your monster?</h2>
+
+  <%= simple_form_for [@reservation, @review] do |f| %>
+    <%= f.input :text,
+    placeholder: "Leave a review for your time with your monster.  \nTell us what you enjoyed, what you disliked, and any other comments for the owner!",
+    label: false,
+    :input_html => { :rows => 7 , :style => 'width: 100%'}
+     %>
+
+      <%= f.input :integer,
+       :input_html => { :type => "number" },
+        label: 'Rate your experience from 1 to 5.  5 being wonderful!',
+        collection: [ 1, 2, 3, 4, 5]%>
+      <%= f.submit class: "primaryButton btn-block" %>
+  <% end %>
+
+</div>
