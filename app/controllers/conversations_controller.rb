@@ -1,7 +1,6 @@
 class ConversationsController < ApplicationController
   def index
-
-
+    @conversations = Conversation.where(user: current_user)
   end
 
   def new; end

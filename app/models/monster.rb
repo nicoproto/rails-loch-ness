@@ -2,6 +2,7 @@ class Monster < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :reservations, dependent: :destroy
+  has_many :conversations
 
   validates :name, presence: true
   validates :photo, presence: true
