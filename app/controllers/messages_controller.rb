@@ -1,17 +1,22 @@
 class MessagesController < ApplicationController
   def new
     @message = Message.new
+    @monster = Monster.find(params[:monster_id])
   end
 
   def create
-    @conversation = Conversation.new
+    @monster = Monster.find(params[:monster_id])
+    @conversation = Conversation.new(
+      user_id: current_user.id,
+      monster_id: @monster.id
+    )
     @message = Message.new(
       text: message_params[:text],
       conversation: @conversation,
-      user: current_user
+      user_id: current_user.id
     )
 
-    @message.save ? (redirect_to monsters_path) : (render :new)
+    @message.save ? (redirect_to monster_path(@monster)) : (render :new)
   end
 
   private

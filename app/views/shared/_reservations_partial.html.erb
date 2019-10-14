@@ -18,7 +18,7 @@
     <!-- BUTTON OPTIONS -->
     <div class="p-3 d-flex flex-column">
       <% if reservation.status == 'confirmed' %>
-        <%= link_to new_message_path, class: "secondaryButton" do %>
+        <%= link_to new_monster_message_path(reservation.monster), class: "secondaryButton" do %>
         <i class="fas fa-question" style="color:white"></i>
         Contact Owner
         <% end %>

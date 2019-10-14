@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :monsters do
     resources :reservations, only: %i[new create]
+    resources :messages, only: %i[new create]
   end
 
   resources :reservations, only: %i[index show edit update destroy]
   resources :conversations, only: %i[index new create show]
-  resources :messages, only: %i[new create]
 
   resources :reservations, only: %i[index show edit update destroy] do
     resources :reviews, only: %i[new create show index]

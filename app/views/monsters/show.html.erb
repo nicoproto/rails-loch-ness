@@ -20,7 +20,7 @@
       </div>
       <!-- CONTACT HOST -->
       <%= link_to 'Contact Host',
-      new_message_path,
+      new_monster_message_path(@monster),
       class: "primaryButton py-2 px-4 align-middle" %>
     </div>
     <h5 id="item-price" class="d-inline"><%= @monster.price.round %></h5>
