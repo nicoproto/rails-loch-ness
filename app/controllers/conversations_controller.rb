@@ -7,5 +7,8 @@ class ConversationsController < ApplicationController
 
   def create; end
 
-  def show; end
+  def show
+    @conversation = Conversation.find(params[:id])
+    @messages = Message.where(conversation: @conversation)
+  end
 end
