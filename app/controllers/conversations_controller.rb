@@ -10,5 +10,7 @@ class ConversationsController < ApplicationController
   def show
     @conversation = Conversation.find(params[:id])
     @messages = Message.where(conversation: @conversation)
+    @message = Message.new
+    @monster = @conversation.monster
   end
 end
