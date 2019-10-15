@@ -12,6 +12,7 @@ puts 'Deleting All Old Seeds'
 
 Review.destroy_all
 Reservation.destroy_all
+Conversation.destroy_all
 Monster.destroy_all
 User.destroy_all
 
