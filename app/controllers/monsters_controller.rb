@@ -1,4 +1,4 @@
-require 'pry'
+
 class MonstersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show price_filter_asc price_filter_dsc review_filter_asc review_filter_dsc]
 

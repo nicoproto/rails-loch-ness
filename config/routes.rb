@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :monsters do
     resources :reservations, only: %i[new create]
+    resources :messages, only: %i[new create]
   end
+
+  resources :reservations, only: %i[index show edit update destroy]
+  resources :conversations, only: %i[index new create show]
+
   resources :reservations, only: %i[index show edit update destroy] do
     resources :reviews, only: %i[new create show index]
-  end
-  resources :conversations, only: %i[new create show] do
-    resources :messages, only: %i[new create]
   end
   get '/dashboard', to: 'dashboards#show'
   get '/price_asc', to: 'monsters#price_filter_asc'

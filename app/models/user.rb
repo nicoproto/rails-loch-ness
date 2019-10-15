@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :reservations
   has_many :messages
   has_many :reviews
+  has_many :conversations
 
   validates :name, presence: true
   validates :avatar, presence: true

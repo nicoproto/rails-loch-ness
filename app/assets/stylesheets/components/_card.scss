@@ -23,3 +23,15 @@
     color: var(--white);
   }
 }
+
+.conversation-card {
+  word-wrap: break-word;
+  background-color: white;
+  border: 1px solid rgba(black, .125);
+  border-radius: .25rem;
+  padding: 4px;
+  position: relative;
+  &:hover{
+    background-color: var(--light_grey);
+  }
+}

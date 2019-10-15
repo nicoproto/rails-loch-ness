@@ -1,0 +1,30 @@
+.messages-container {
+  padding-top: 16vh;
+  height: 80vh;
+}
+
+.user-message {
+  background-color: var(--green);
+  color: white;
+  font-weight: bolder;
+  border-radius: 8px;
+  padding: 8px 12px;
+  p {
+    margin: 0;
+  }
+}
+
+.receiver-message {
+  color: var(--green);
+  border: 2px solid var(--green);
+  font-weight: bolder;
+  border-radius: 8px;
+  padding: 8px 12px;
+  p {
+    margin: 0;
+  }
+  .avatar {
+    border-radius: 50%;
+  }
+}
+
