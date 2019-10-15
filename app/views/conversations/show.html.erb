@@ -3,7 +3,7 @@
   <% if message.user == current_user %>
     <%= render 'shared/user_message_partial', message: message %>
   <% else %>
-    <%= render 'shared/seller_message_partial', message: message %>
+    <%= render 'shared/receiver_message_partial', message: message %>
   <% end %>
 <% end %>
 </div>

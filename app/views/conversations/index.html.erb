@@ -1,15 +1,24 @@
 <div class="container col-12 col-md-10 col-lg-8 convo-box">
-  <h2>Your conversations</h2>
+  <h2>Your conversations with owners</h2>
   <div class="col-12 mt-3">
     <% if @conversations.count > 0 %>
     <div class="cards-container">
       <%= render 'shared/conversations_partial', conversations: @conversations%>
     </div>
     <% else %>
-      <div class="card col">
-        <div class="card-body">
-          <p> No conversations yet!</p>
-        </div>
+      <h5> No conversations yet!</h5>
+    <% end %>
+  </div>
+  <br>
+  <h2>Your conversations with renters</h2>
+  <div class="col-12 mt-3">
+    <% if @owner_conversations %>
+    <div class="cards-container">
+      <%= render 'shared/owner_conversations_partial', conversations: @owner_conversations%>
+    </div>
+    <% else %>
+      <div>
+        <h5> No conversations yet!</h5>
       </div>
     <% end %>
   </div>
