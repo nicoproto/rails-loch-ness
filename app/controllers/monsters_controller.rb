@@ -1,4 +1,3 @@
-
 class MonstersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show price_filter_asc price_filter_dsc review_filter_asc review_filter_dsc]
 
@@ -27,7 +26,11 @@ class MonstersController < ApplicationController
     @monster = Monster.new
   end
 
-  def create; end
+  def create
+    @monster = Monster.new(monster_strong_params)
+    @monster.user = current_user
+    @monster.save ? (redirect_to monster_path(@monster)) : (render :new)
+  end
 
   def show
     @monster = Monster.find(params[:id])
@@ -65,6 +68,10 @@ class MonstersController < ApplicationController
   end
 
   private
+
+  def monster_strong_params
+    params.require(:monster).permit(:name, :price, :address, :description, :photo)
+  end
 
   def filter_by_date(date_string)
     dates = date_string.split(' to ')
