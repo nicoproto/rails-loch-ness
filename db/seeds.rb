@@ -29,8 +29,8 @@ nico = User.create(
 
 sy = User.create(
   name: 'sy',
-  email: 'sy@gmail.com',
-  password: 'password',
+  email: 'sy.rashid.11@gmail.com',
+  password: 'holla123',
   avatar: 'https://avatars2.githubusercontent.com/u/6656014?v=4'
 )
 
