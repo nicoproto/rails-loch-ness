@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def pending
     @user = params[:user]
-    # @monster = ???
+    @monster = params[:monster]
 
     mail(to: @user.email, subject: 'Pending Monster Reservation from Loch Ness!')
   end
