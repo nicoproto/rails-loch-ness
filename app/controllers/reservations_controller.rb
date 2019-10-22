@@ -28,9 +28,9 @@ class ReservationsController < ApplicationController
 
     if @reservation.save
       pending_mail = UserMailer.with(user: current_user, monster: @monster).pending
-      # request_mail = UserMailer.with(owner: @monster.user, monster: @monster, requester: current_user).request
-      # request_mail.deliver_now
       pending_mail.deliver_now
+      accept_mail = UserMailer.with(owner: @monster.user, monster: @monster, user: current_user).accept
+      accept_mail.deliver_now
       (redirect_to reservation_path(@reservation))
     else
       (render :new)

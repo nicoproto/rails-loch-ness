@@ -13,11 +13,12 @@ class UserMailerPreview < ActionMailer::Preview
 
     UserMailer.with(user: user, monster: monster).confirmation
   end
-  # def request
-  #   requester = User.first
-  #   monster = Monster.first
-  #   owner = User.last
 
-  #   UserMailer.with(owner: owner, monster: monster, requester: requester).request
-  # end
+  def accept
+    monster = Monster.first
+    user = User.last
+    owner = User.first
+
+    UserMailer.with(owner: owner, user: user, monster: monster).accept
+  end
 end

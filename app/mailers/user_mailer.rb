@@ -18,12 +18,12 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.request.subject
   #
-  def request
-    # @owner = params[:owner]
-    # @monster = params[:monster]
-    # @requester = params[:requester]
+  def accept
+    @user = params[:user]
+    @monster = params[:monster]
+    @owner = params[:owner]
 
-    # mail(to: @owner.email, subject: "Requested Monster Reservation from #{@requester.name.capitalize}")
+    mail(to: @user.email, subject: 'Requested Monster Reservation')
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
