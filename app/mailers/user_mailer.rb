@@ -1,5 +1,6 @@
-class UserMailer < ApplicationMailer
 
+
+class UserMailer < ApplicationMailer
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -7,7 +8,7 @@ class UserMailer < ApplicationMailer
   #
   def pending
     @user = params[:user]
-    # @monster = ???
+    @monster = params[:monster]
 
     mail(to: @user.email, subject: 'Pending Monster Reservation from Loch Ness!')
   end
@@ -17,10 +18,12 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.request.subject
   #
-  def request
-    # Figure out how to get the owner of the monster here, not the current user
+  def accept
+    @user = params[:user]
+    @monster = params[:monster]
+    @owner = params[:owner]
 
-    # mail(to: @owner.email, subject: 'Requested Monster Reservation from User_placeholder')
+    mail(to: @user.email, subject: 'Requested Monster Reservation')
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -30,6 +33,7 @@ class UserMailer < ApplicationMailer
   #
   def confirmation
     @user = params[:user]
+    @monster = params[:monster]
 
     mail(to: @user.email, subject: 'Confirmed Monster Reservation from Loch Ness!')
   end

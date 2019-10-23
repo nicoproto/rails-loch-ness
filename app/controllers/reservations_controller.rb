@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @dates = reservation_strong_params[:start_date].split(" to ")
+    @dates = reservation_strong_params[:start_date].split(' to ')
     @start_date = Date.parse(@dates[0])
     @end_date = Date.parse(@dates[1])
 
@@ -24,10 +24,19 @@ class ReservationsController < ApplicationController
       user_id: current_user.id,
       status: 'pending',
       total_price: @total_price
-    )
+      )
 
-    @reservation.save ? (redirect_to reservation_path(@reservation)) : (render :new)
+    if @reservation.save
+      pending_mail = UserMailer.with(user: current_user, monster: @monster).pending
+      pending_mail.deliver_now
+      accept_mail = UserMailer.with(owner: @monster.user, monster: @monster, user: current_user).accept
+      accept_mail.deliver_now
+      (redirect_to reservation_path(@reservation))
+    else
+      (render :new)
+    end
   end
+
 
   def show; end
 
@@ -52,7 +61,10 @@ class ReservationsController < ApplicationController
 
   def accept_reservation
     @reservation.status = 'confirmed'
-    @reservation.save
+    if @reservation.save
+      confirmation_mail = UserMailer.with(user: @reservation.user, monster: @reservation.monster).confirmation
+      confirmation_mail.deliver_now
+    end
     redirect_to dashboard_path
   end
 
@@ -89,3 +101,4 @@ class ReservationsController < ApplicationController
     end
   end
 end
+

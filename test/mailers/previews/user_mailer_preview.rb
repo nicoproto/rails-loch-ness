@@ -1,7 +1,24 @@
+
 class UserMailerPreview < ActionMailer::Preview
   def pending
     user = User.first
-    # This is how you pass value to params[:user] inside mailer definition!
-    UserMailer.with(user: user).pending
+    monster = Monster.first
+
+    UserMailer.with(user: user, monster: monster).pending
+  end
+
+  def confirmation
+    user = User.first
+    monster = Monster.first
+
+    UserMailer.with(user: user, monster: monster).confirmation
+  end
+
+  def accept
+    monster = Monster.first
+    user = User.last
+    owner = User.first
+
+    UserMailer.with(owner: owner, user: user, monster: monster).accept
   end
 end
