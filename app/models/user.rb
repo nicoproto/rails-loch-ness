@@ -11,5 +11,7 @@ class User < ApplicationRecord
   has_many :conversations
 
   validates :name, presence: true
-  validates :avatar, presence: true
+  validates :photo, presence: true
+
+  mount_uploader :photo, PhotoUploader
 end

@@ -24,7 +24,7 @@ nico = User.create(
   name: 'nico',
   email: 'nico@gmail.com',
   password: 'password',
-  avatar: 'https://avatars0.githubusercontent.com/u/43278026?v=4'
+  remote_photo_url: 'https://avatars0.githubusercontent.com/u/43278026?v=4'
 )
 
 sy = User.create(
