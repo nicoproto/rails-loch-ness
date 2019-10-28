@@ -1,3 +1,12 @@
 .convo-box {
   padding-top: 16vh;
 }
+
+
+@media screen and (max-width: 576px) {
+  .conversation-card {
+    p {
+      display: none;
+    }
+  }
+}
