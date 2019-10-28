@@ -1,10 +1,10 @@
 <% conversations.each do |conversation|%>
 <div class="d-flex align-items-center conversation-card mb-3 pl-2">
-  <%= image_tag conversation.user.photo, height:80, width: 80, crop: :fill, class: "avatar mr-3" %>
+  <%= image_tag conversation.user.photo.url, height:80, width: 80, crop: :fill, class: "avatar mr-3" %>
   <div>
-    <h5 class="card-title">Conversation with <%=conversation.user.name %> about <%= conversation.monster.name %></h5>
-    <p class="card-subtitle mb-1 pl-1">Last message at <%= conversation.updated_at %></p>
-    <p class="card-subtitle pl-1">Created on <%= conversation.created_at %></p>
+    <h5 class="card-title"><%=conversation.user.name.capitalize %> >> <%= conversation.monster.name %></h5>
+    <p class="card-subtitle mb-1 pl-1">Last message at <%= conversation.updated_at.strftime('%l:%M %p %a') %></p>
+    <p class="card-subtitle pl-1">Conversation started on <%= conversation.created_at.strftime('%a %d %b')  %></p>
     <%= link_to '', conversation_path(conversation), class: "stretched-link" %>
   </div>
 </div>

@@ -28,3 +28,24 @@
   }
 }
 
+.convo-header {
+  display: none;
+  .avatar {
+    border-radius: 50%;
+  }
+  h5 {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .convo-header {
+    display: inline-block;
+  }
+
+  .receiver-message {
+    img {
+      display: none;
+    }
+  }
+}

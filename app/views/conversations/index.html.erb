@@ -1,8 +1,8 @@
 <div class="container col-12 col-md-10 col-lg-8 convo-box">
-  <h2>Your conversations with owners</h2>
+  <h2>Conversations with owners</h2>
   <div class="col-12 mt-3">
     <% if @conversations.count > 0 %>
-    <div class="cards-container">
+    <div class="cards-container p-0">
       <%= render 'shared/conversations_partial', conversations: @conversations%>
     </div>
     <% else %>
@@ -10,10 +10,10 @@
     <% end %>
   </div>
   <br>
-  <h2>Your conversations with renters</h2>
+  <h2>Conversations with renters</h2>
   <div class="col-12 mt-3">
     <% if @owner_conversations %>
-    <div class="cards-container">
+    <div class="cards-container p-0">
       <%= render 'shared/owner_conversations_partial', conversations: @owner_conversations%>
     </div>
     <% else %>

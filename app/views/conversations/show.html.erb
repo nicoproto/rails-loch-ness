@@ -1,21 +1,30 @@
 <div class="container messages-container col-12 col-md-10 col-lg-8 overflow-auto">
-<% @messages.each do |message| %>
+  <div class="convo-header mb-3">
+    <% if @user == current_user %>
+    <%= image_tag @owner.photo.url, height:40, width: 40, crop: :fill, class: "avatar mr-3" %>
+      <h5>Conversation with <%= @owner.name.capitalize %></h5>
+    <% else %>
+    <%= image_tag @user.photo.url, height:40, width: 40, crop: :fill, class: "avatar mr-3" %>
+      <h5>Conversation with <%= @user.name.capitalize %></h5>
+    <% end %>
+  </div>
+  <% @messages.each do |message| %>
   <% if message.user == current_user %>
-    <%= render 'shared/user_message_partial', message: message %>
+  <%= render 'shared/user_message_partial', message: message %>
   <% else %>
-    <%= render 'shared/receiver_message_partial', message: message %>
+  <%= render 'shared/receiver_message_partial', message: message %>
   <% end %>
-<% end %>
+  <% end %>
 </div>
 <div class="container col-12 col-md-10 col-lg-8">
   <!-- TO DO: Refactor this into a shared form -->
   <%= simple_form_for [@monster, @message] do |f| %>
-    <%= f.input :text,
-    placeholder: "Send a message...",
-    label: false,
-    :input_html => { :rows => 2 , :style => 'width: 100%'}
-     %>
-    <%= hidden_field_tag(:conversation, @conversation.id) %>
-    <%= f.submit class: "primaryButton btn-block" %>
+  <%= f.input :text,
+  placeholder: "Send a message...",
+  label: false,
+  :input_html => { :rows => 2 , :style => 'width: 100%'}
+  %>
+  <%= hidden_field_tag(:conversation, @conversation.id) %>
+  <%= f.submit class: "primaryButton btn-block" %>
   <% end %>
 </div>
