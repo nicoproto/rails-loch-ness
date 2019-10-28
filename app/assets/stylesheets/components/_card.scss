@@ -23,6 +23,9 @@
   .card-header {
     background: var(--green);
     color: var(--white);
+    h5 {
+      color: var(--white);
+    }
   }
 }
 
