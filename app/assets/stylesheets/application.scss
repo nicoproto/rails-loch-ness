@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,700|Open+Sans:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Cabin:500,700|Sniglet&display=swap");
 
 @import "bootstrap/scss/bootstrap";
 @import 'mapbox-gl/dist/mapbox-gl.css';
@@ -25,14 +25,15 @@
   --green: #315545;
   --white: #FFFFFF;
   --light_grey: #EAEAEA;
-  --headers-font: "Open Sans";
-  --body-font: "Nunito";
+  --headers-font: museo, serif;
+  --body-font: "Cabin";
   --basepx: 6px;
 }
 
 h1, h2, h4 {
   color: var(--green);
   font-family: var(--headers-font);
+  font-weight: 500;
 }
 
 body {
@@ -40,7 +41,7 @@ body {
 }
 
 h2, h4 {
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .fa-arrow-circle-left {
