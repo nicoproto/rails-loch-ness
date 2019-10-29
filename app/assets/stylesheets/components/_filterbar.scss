@@ -3,3 +3,16 @@
   margin: 1vw 0;
   width: 100%;
 }
+
+
+
+@media (max-width: 768px) {
+  .filter-bar {
+    display: block !important;
+
+    .dropdown {
+      margin-bottom: 1vh;
+      margin-top: 1vh;
+    }
+  }
+}
