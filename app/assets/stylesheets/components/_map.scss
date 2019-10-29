@@ -1,0 +1,12 @@
+.mapboxgl-popup {
+  max-width: 200px;
+  color: var(--white);
+
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Cabin', sans-serif;
+  background: var(--green);
+  padding-bottom: 5px;
+}

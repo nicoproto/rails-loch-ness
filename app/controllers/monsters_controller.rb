@@ -17,7 +17,8 @@ class MonstersController < ApplicationController
     @markers = @monsters.map do |monster|
       {
         lat: monster.latitude,
-        lng: monster.longitude
+        lng: monster.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { monster: monster })
       }
     end
   end
