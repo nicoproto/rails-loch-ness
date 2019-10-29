@@ -21,7 +21,9 @@ class MonstersController < ApplicationController
     @markers = @monsters.map do |monster|
       {
         lat: monster.latitude,
-        lng: monster.longitude
+        lng: monster.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { monster: monster }),
+        image_url: helpers.asset_url('monsterpin')
       }
     end
   end
