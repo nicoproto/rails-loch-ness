@@ -1,5 +1,6 @@
 <div class="border rounded-lg p-3 booking-form">
   <%= simple_form_for [@monster, @reservation] do |d| %>
+  <%= d.error_notification %>
     <div class="row">
       <div class="col-sm-12">
         <%= d.input :start_date,
@@ -17,6 +18,6 @@
           <h5>&nbsp€</h5>
         </div>
       </div>
-      <%= d.submit class: "primaryButton btn-block" %>
+      <%= d.submit class: "primaryButton btn-block reservation-submit" %>
   <% end %>
 </div>

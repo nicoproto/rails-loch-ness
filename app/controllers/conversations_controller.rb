@@ -13,5 +13,7 @@ class ConversationsController < ApplicationController
     @messages = Message.where(conversation: @conversation)
     @message = Message.new
     @monster = @conversation.monster
+    @user = @conversation.user
+    @owner = @monster.user
   end
 end

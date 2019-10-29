@@ -1,18 +1,18 @@
 <div class="filter-bar d-flex">
-  <div class="dropdown">
-    <button class="primaryButton dropdown-toggle mr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div class="dropdown flex-grow-1 ml-3">
+    <button class="primaryButton dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Filter By Price
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-menu col-sm-12" aria-labelledby="dropdownMenuButton ">
       <%= link_to "Price: High to Low", price_dsc_path(location: params[:location]), class: "dropdown-item", remote: true %>
       <%= link_to "Price: Low to High", price_asc_path(location: params[:location]), class: "dropdown-item", remote: true %>
     </div>
   </div>
-  <div class="dropdown">
-    <button class="primaryButton dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div class="dropdown flex-grow-1 ml-3">
+    <button class="primaryButton dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Filter By Reviews
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-menu col-sm-12" aria-labelledby="dropdownMenuButton">
       <%= link_to "Review: High to Low", reviews_dsc_path(location: params[:location]), class: "dropdown-item", remote: true %>
       <%= link_to "Review: Low to High", reviews_asc_path(location: params[:location]), class: "dropdown-item", remote: true %>
     </div>

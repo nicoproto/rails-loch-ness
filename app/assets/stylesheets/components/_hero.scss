@@ -1,29 +1,47 @@
 .hero {
   height: 100vh;
-  display: flex;
 
   .left-hero, .right-hero {
-    display: flex;
     align-items: center;
   }
-
   .left-hero {
-    width: 60%;
     background-color: var(--green);
-    padding: 0 12%;
+    padding: 0 6% 0 10%;
 
     h1 {
       color: var(--white);
     }
+    img {
+      display: none;
+    }
   }
-
   .right-hero {
-    width: 40%;
-    padding: 10% 6% 0 6%;
-
+    padding: 15% 2% 0% 4%;
     img {
       width: 100%;
       height: auto;
     }
   }
+}
+
+@media screen and (max-width: 576px) {
+  .hero {
+    .left-hero, .right-hero {
+      height: 100%;
+    }
+    .left-hero {
+      padding: 36% 12% 0 10%;
+      height: 104%;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+    .right-hero {
+      padding: 0% 6% 0% 10%;
+      height: 100%;
+    }
+  }
+
 }
