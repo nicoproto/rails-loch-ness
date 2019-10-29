@@ -1,10 +1,10 @@
-
 <div class="index-page">
-  <%= render 'shared/filter_bar' %>
-
-  <div class="d-flex row">
-    <div class="cards-container col-12 col-sm-6 col-lg-7 row">
+  <div class="d-flex row cards-and-map">
+    <div class="cards col-12 col-sm-6 col-lg-7 row mr-1">
+      <%= render 'shared/filter_bar' %>
+      <div class="cards-container row">
         <%= render 'shared/monsters_partial', monsters: @monsters %>
+      </div>
     </div>
     <div class="map-box col-12 col-sm-6 col-lg-5"
     id="map"

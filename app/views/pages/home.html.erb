@@ -1,16 +1,16 @@
-<div class="hero">
-  <div class="left-hero">
+<div class="hero d-flex row">
+  <div class="left-hero d-flex col-12 col-sm-7">
     <div class="title">
-      <h1>At Loch Ness we believe in second chances</h1>
-      <h1>...even for monsters</h1>
+      <h1>Rent a monster... Make a friend</h1>
+      <%= render 'shared/searchbar' %>
+      <img src="https://res.cloudinary.com/syrashid/image/upload/v1572249801/ghosts_b9umzi.png" alt="ghosts" class="mt-5">
     </div>
   </div>
-  <div class="right-hero">
+  <div class="right-hero d-flex col-12 col-sm-5">
     <div class="title">
-      <h1>Make a friend</h1>
-      <h1 class="mb-2">Find a monster...</h1>
-      <%= render 'shared/searchbar' %>
-      <%= image_tag "https://res.cloudinary.com/syrashid/image/upload/v1565867833/monster_copy_bvatf1.png" %>
+      <h1>At Loch Ness we believe in second chances</h1>
+      <h1  class="mb-3">...even for monsters</h1>
+      <img src="https://res.cloudinary.com/syrashid/image/upload/v1572249801/ghosts_b9umzi.png" alt="ghosts" class="mt-5">
     </div>
   </div>
 </div>

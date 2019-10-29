@@ -7,11 +7,15 @@ class MonstersController < ApplicationController
     if params[:location].present?
       @monsters = @monsters.near(params[:location], 100)
       session[:location] = params[:location]
+    else
+      session.delete(:location)
     end
 
     if params[:search_date].present?
       @monsters = filter_by_date(params[:search_date])
       session[:search_date] = params[:search_date]
+    else
+      session.delete(:search_date)
     end
 
     @markers = @monsters.map do |monster|

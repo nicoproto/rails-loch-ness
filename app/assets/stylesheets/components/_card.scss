@@ -13,14 +13,19 @@
 }
 
 .cards-container {
-  height: 86vh;
+  height: 76vh;
   overflow: scroll;
+  padding-left: 4vw;
+  padding-right: 2vw;
 }
 
 .show-page, .index-page {
   .card-header {
     background: var(--green);
     color: var(--white);
+    h5 {
+      color: var(--white);
+    }
   }
 }
 
@@ -33,5 +38,17 @@
   position: relative;
   &:hover{
     background-color: var(--light_grey);
+  }
+}
+
+@media (max-width: 576px) {
+  .cards-and-map {
+    margin: auto;
+    width: 100%;
+  }
+
+  .cards {
+    margin: 0;
+    padding-left: 0;
   }
 }

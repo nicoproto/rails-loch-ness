@@ -10,20 +10,20 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @dates = reservation_strong_params[:start_date].split(' to ')
+    date_string = reservation_strong_params[:start_date]
+    @monster = Monster.find(params[:monster_id])
+    @dates = date_string.split(' to ')
     @start_date = Date.parse(@dates[0])
     @end_date = Date.parse(@dates[1])
-
-    @monster = Monster.find(params[:monster_id])
     @total_price = @monster.price * (@end_date - @start_date + 1)
 
     @reservation = Reservation.new(
-      start_date: @start_date,
-      end_date: @end_date,
+      start_date: @start_date || nil,
+      end_date: @end_date || nil,
       monster: @monster,
       user_id: current_user.id,
       status: 'pending',
-      total_price: @total_price
+      total_price: @total_price || nil
       )
 
     if @reservation.save
@@ -32,11 +32,8 @@ class ReservationsController < ApplicationController
       accept_mail = UserMailer.with(owner: @monster.user, monster: @monster, user: current_user).accept
       accept_mail.deliver_now
       (redirect_to reservation_path(@reservation))
-    else
-      (render :new)
     end
   end
-
 
   def show; end
 
