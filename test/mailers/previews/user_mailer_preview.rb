@@ -21,4 +21,9 @@ class UserMailerPreview < ActionMailer::Preview
 
     UserMailer.with(owner: owner, user: user, monster: monster).accept
   end
+
+  def welcome
+    user = User.first
+    UserMailer.with(user: user).welcome
+  end
 end

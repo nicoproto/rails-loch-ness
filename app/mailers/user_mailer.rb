@@ -37,4 +37,9 @@ class UserMailer < ApplicationMailer
 
     mail(to: @user.email, subject: 'Confirmed Monster Reservation from Loch Ness!')
   end
+
+  def welcome
+    @user = params[:user]
+    mail(to: @user.email, subject: 'Welcome to Loch Ness!')
+  end
 end
