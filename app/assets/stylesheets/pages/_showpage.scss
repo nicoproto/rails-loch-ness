@@ -21,5 +21,16 @@
       margin-bottom: 1vh;
     }
   }
+
+  @media screen and (max-width: 320px) {
+    .card-body.d-flex {
+      display: block !important;
+    }
+
+    .w-50 {
+      width: 100% !important;
+    }
+  }
+
 }
 
