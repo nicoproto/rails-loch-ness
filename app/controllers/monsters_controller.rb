@@ -18,7 +18,8 @@ class MonstersController < ApplicationController
       {
         lat: monster.latitude,
         lng: monster.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { monster: monster })
+        infoWindow: render_to_string(partial: "info_window", locals: { monster: monster }),
+        image_url: helpers.asset_url('monsterpin')
       }
     end
   end
