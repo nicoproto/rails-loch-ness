@@ -52,3 +52,22 @@
     padding-left: 0;
   }
 }
+
+img.card-img-top  {
+  max-height: 26vh;
+  object-position: top;
+  object-fit: cover;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  img.card-img-top  {
+    max-height: 30vh;
+  }
+}
+
+@media (max-width: 480px) {
+  img.card-img-top  {
+    max-height: 35vh;
+  }
+}
