@@ -27,10 +27,8 @@ class ReservationsController < ApplicationController
       )
 
     if @reservation.save
-      pending_mail = UserMailer.with(user: current_user, monster: @monster).pending
-      pending_mail.deliver_now
-      accept_mail = UserMailer.with(owner: @monster.user, monster: @monster, user: current_user).accept
-      accept_mail.deliver_now
+      Email::RenterPending.call(current_user, @monster)
+      Email::OwnerAccept.call(@monster.user, @monster, current_user)
       (redirect_to reservation_path(@reservation))
     end
   end
@@ -58,10 +56,7 @@ class ReservationsController < ApplicationController
 
   def accept_reservation
     @reservation.status = 'confirmed'
-    if @reservation.save
-      confirmation_mail = UserMailer.with(user: @reservation.user, monster: @reservation.monster).confirmation
-      confirmation_mail.deliver_now
-    end
+    Email::RenterConfirmation.call(@reservation.user, @reservation.monster) if @reservation.save
     redirect_to dashboard_path
   end
 
