@@ -7,9 +7,17 @@
 }
 
 .card {
+
   &:hover{
     background-color: var(--light_grey);
   }
+
+  img {
+    height: 10rem;
+    margin-top: 2vh;
+    object-fit: cover;
+  }
+
 }
 
 .cards-container {

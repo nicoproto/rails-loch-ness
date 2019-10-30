@@ -14,5 +14,23 @@
   .booking-form {
     background: #31554512;
   }
+
+  @media screen and (max-width: 480px) {
+    .d-flex.deflex.my-3.justify-content-between.align-items-center, .d-flex.align-items-center {
+      display: block !important;
+      margin-bottom: 1vh;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .card-body.d-flex {
+      display: block !important;
+    }
+
+    .w-50 {
+      width: 100% !important;
+    }
+  }
+
 }
 

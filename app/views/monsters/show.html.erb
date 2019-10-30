@@ -6,8 +6,8 @@
   <!-- INFO AND BOOKING -->
   <div class="col-12 col-lg-6 widget-content" data-unavailable="<%= @monster.unavailable_dates.to_json %>">
     <!-- INFO -->
-    <div class="d-flex my-3 justify-content-between align-items-center">
-      <div class="d-flex align-items-center row">
+    <div class="d-flex deflex my-3 justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
         <h2 class="mr-3 mb-0 col-xs-12"><%= @monster.name %></h2>
         <div class="rating-stars col-xs-12">
           <% @monster.avg_reviews.round.times do %>

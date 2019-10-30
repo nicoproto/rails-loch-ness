@@ -6,7 +6,7 @@
         <%= link_to monster.name, monster_path(monster), class: "stretched-link" %>
       </h5>
       <h6 class="card-text"><%= monster.description %></h6>
-      <p class="card-text"><%= monster.price %>$ / per night</p>
+      <p class="card-text"> <%= monster.price.round %> € / day</p>
       <div class="rating-stars">
         <% monster.avg_reviews.round.times do %>
           <i class="fas fa-star"></i>
@@ -17,9 +17,7 @@
 
       </div>
       <div class="rating-info d-flex justify-content-between">
-        <p>Rating: <%= monster.avg_reviews %></p>
         <p><%= monster.reviews.count %> Reviews</p>
-
       </div>
     </div>
   </div>
