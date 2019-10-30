@@ -8,24 +8,26 @@
         <div class="w-50">
           <img src="<%= reservation.monster.photo %>" class="rounded w-100" alt="<%= reservation.monster.name %>">
         </div>
-        <div class="p-3 d-flex flex-column justify-content-between">
-          <h5>Rented monster: <strong><%= reservation.monster.name %></strong></h5>
-          <h5>Reserved by: <strong><%= reservation.user.name.capitalize %> </strong></h5>
-          <h5>From: <strong><%= reservation.start_date %></strong></h5>
-          <h5>To: <strong><%= reservation.end_date %></strong></h5>
-          <h5>Total price: <strong><%= reservation.total_price.round %> €</strong></h5>
-        </div>
+        <div class="res-info">
+          <div class="p-3 d-flex flex-column justify-content-between">
+            <h5>Rented monster: <br class="br-sx"><strong><%= reservation.monster.name %></strong></h5>
+            <h5>Reserved by: <br class="br-sx"><strong><%= reservation.user.name.capitalize %> </strong></h5>
+            <h5>From: <br class="br-sx"><strong><%= reservation.start_date %></strong></h5>
+            <h5>To: <br class="br-sx"><strong><%= reservation.end_date %></strong></h5>
+            <h5>Total price: <br class="br-sx"><strong><%= reservation.total_price.round %> €</strong></h5>
+          </div>
 
-        <div class="p-3 d-flex flex-column">
-            <% if reservation.status == 'pending' %>
-              <%= link_to accept_path(reservation), method: :patch, action: "accept_reservation", data: {confirm: "Are you sure you want to accept this reservation?"}, class: "secondaryButton mb-3" do %>
-                <i class="fas fa-check-circle"></i> Accept
-              <% end %>
+          <div class="p-3 d-flex flex-column">
+              <% if reservation.status == 'pending' %>
+                <%= link_to accept_path(reservation), method: :patch, action: "accept_reservation", data: {confirm: "Are you sure you want to accept this reservation?"}, class: "secondaryButton xs mb-3" do %>
+                  <i class="fas fa-check-circle pr-1"></i> Accept
+                <% end %>
 
-              <%= link_to reject_path(reservation), method: :patch, action: "reject_reservation", data: {confirm: "Are you sure you want to reject this reservation?"}, class: "secondaryButton mb-3" do %>
-                  <i class="fas fa-user-times"></i> Reject
+                <%= link_to reject_path(reservation), method: :patch, action: "reject_reservation", data: {confirm: "Are you sure you want to reject this reservation?"}, class: "secondaryButton xs mb-3" do %>
+                    <i class="fas fa-user-times pr-1"></i> Reject
+                <% end %>
               <% end %>
-            <% end %>
+          </div>
         </div>
       </div>
     </div>
