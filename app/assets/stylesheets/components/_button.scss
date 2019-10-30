@@ -19,6 +19,14 @@
   border-radius: 4px;
   transition: opacity 1s ease;
 
+  &.xs {
+    padding: 6px 10px;
+    background: none;
+    color: #315545;
+    display: flex;
+    align-items: center;
+  }
+
   &:hover {
     opacity: 0.7;
     color: var(--white);
@@ -34,4 +42,6 @@
       color: var(--green);
     }
   }
+
+
 }

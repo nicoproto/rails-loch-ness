@@ -57,3 +57,14 @@ a {
     color: var(--green);
   }
 }
+
+.br-sx {
+  display: none;
+}
+
+@media (max-width: 320px) {
+  .br-sx {
+    display: block;
+  }
+}
+

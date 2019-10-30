@@ -8,6 +8,10 @@
       object-fit: cover;
     }
   }
+
+  .res-info {
+    display: flex;
+  }
 }
 
 .map-box {
@@ -18,6 +22,29 @@
 @media (max-width: 576px) {
   .map-box {
     display: none;
+  }
+  .res-info {
+    display: block;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .card-body.d-flex.justify-content-between {
+    display: block !important;
+  }
+
+  .index-page {
+    h5 {
+      font-size: 1rem;
+    }
+    .w-50 {
+      width: 100% !important;
+
+      img {
+        max-width: 100% !important;
+      }
+    }
   }
 }
 
