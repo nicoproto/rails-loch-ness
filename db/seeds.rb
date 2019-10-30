@@ -20,23 +20,63 @@ printLine
 
 puts 'Creating New User Seeds'
 
-nico = User.create(
+users = []
+monsters = []
+
+users << User.create(
   name: 'nico',
   email: 'nico@gmail.com',
   password: 'password',
   remote_photo_url: 'https://avatars0.githubusercontent.com/u/43278026?v=4'
 )
 
-sy = User.create(
+users << User.create(
   name: 'sy',
   email: 'sy@gmail.com',
   password: 'holla123',
   remote_photo_url: 'https://avatars2.githubusercontent.com/u/6656014?v=4'
 )
 
+users << User.create(
+  name: 'clyde',
+  email: 'clyde@gmail.com',
+  password: 'password',
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/pacman/images/f/f2/ClydeNew.png/revision/latest?cb=20160603182600'
+)
+
+users << User.create(
+  name: 'pinky',
+  email: 'pinky@gmail.com',
+  password: 'password',
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/pacman/images/1/1f/PinkyNew.png/revision/latest/scale-to-width-down/350?cb=20160603182431'
+)
+
+users << User.create(
+  name: 'inky',
+  email: 'inky@gmail.com',
+  password: 'password',
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/pacman/images/f/f1/InkyNew.png/revision/latest/scale-to-width-down/350?cb=20160603182516'
+)
+
+users << User.create(
+  name: 'blinky',
+  email: 'blinky@gmail.com',
+  password: 'password',
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/pacman/images/4/4d/BlinkyNew.png/revision/latest/scale-to-width-down/350?cb=20160603182347'
+)
+
 printLine
 
 puts 'Creating monsters'
+
+monsters << Monster.create(
+  address: "Birdwood Ave, South Yarra VIC 3141",
+  price: rand(70..200),
+  description: 'Toothless is a 21-year old male Night Fury appearing in the How To Train Your Dragon franchise. The last known Night Fury in existence, Toothless is the dragon mount and best friend of Hiccup Horrendous Haddock III and the current king of the dragons in and around the Barbaric Archipelago and on Berk.',
+  name: 'Toothless',
+  user: user.second,
+  remote_photo_url: 'https://res.cloudinary.com/syrashid/image/upload/v1572435013/toppng.com-toothless-the-dragon-from-how-to-train-your-dragon-train-your-dragon-toothless-800x435_ka5yv5.png'
+)
 
 monster1 = Monster.create(
   address: "Helsinki",
