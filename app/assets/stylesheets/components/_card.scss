@@ -49,6 +49,11 @@
   }
 }
 
+.card-description{
+    height: 15vh;
+    overflow: scroll
+}
+
 @media (max-width: 576px) {
   .cards-and-map {
     margin: auto;
