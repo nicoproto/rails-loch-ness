@@ -19,7 +19,17 @@ class MessagesController < ApplicationController
       conversation: @conversation,
       user_id: current_user.id
     )
-    @message.save ? (redirect_to conversation_path(@conversation)) : (render :new)
+    # Autoreply function for messages
+    if @message.save
+      Message.create(
+        text: "AUTO REPLY: Thank you so much for your interest in #{@monster.name}.  Sy and Nico are off searching for new monsters so our responses may be delayed.  Keep looking around, there are plenty of great monsters out there to meet!",
+        conversation: @conversation,
+        user_id: @monster.user.id
+      )
+      redirect_to conversation_path(@conversation)
+    else
+      render :new
+    end
   end
 
   private
