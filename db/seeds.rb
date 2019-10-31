@@ -251,30 +251,33 @@ printLine
 
 puts 'Creating Reservations'
 
-start_time = Time.now
-end_time = Time.now + (rand 2..7 * seconds_in_a_day)
+12.times do
+  start_time = Time.now + (rand 2..30 * seconds_in_a_day)
+  end_time = start_time + (rand 2..14 * seconds_in_a_day)
+  monster = Monster.all.sample
+  Reservation.create(
+    status: %w[pending confirmed denied].sample,
+    monster: monster,
+    user: User.offset(2).sample,
+    start_date: start_time, end_date: end_time,
+    total_price: ((end_time - start_time) / seconds_in_a_day) * monster.price
+  )
+end
 
-Reservation.create(
-  status: 'pending',
-  monster: monster1,
-  user: sy,
-  start_date: start_time, end_date: end_time,
-  total_price: ((end_time - start_time) / seconds_in_a_day) * monster1.price
-)
-Reservation.create(
-  status: 'confirmed',
-  monster: monster2,
-  user: sy,
-  start_date: start_time, end_date: end_time,
-  total_price: ((end_time - start_time) / seconds_in_a_day) * monster2.price
-)
-Reservation.create(
-  status: 'denied',
-  monster: monster3,
-  user: sy,
-  start_date: start_time, end_date: end_time,
-  total_price: ((end_time - start_time) / seconds_in_a_day) * monster3.price
-)
+
+old_reservations = []
+12.times do
+  start_time = Time.now - (rand 15..30 * seconds_in_a_day)
+  end_time = start_time + (rand 2..14 * seconds_in_a_day)
+  monster = Monster.all.sample
+  old_reservations = Reservation.create(
+    status: 'confirmed',
+    monster: monster,
+    user: User.offset(2).sample,
+    start_date: start_time, end_date: end_time,
+    total_price: ((end_time - start_time) / seconds_in_a_day) * monster.price
+  )
+end
 
 printLine
 
