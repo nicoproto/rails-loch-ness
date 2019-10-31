@@ -34,3 +34,9 @@
 .solid-background {
   background-color: var(--green)
 }
+
+@media screen and (max-width: 576px) {
+  .ln-navbar a {
+    color: var(--white);
+  }
+}
