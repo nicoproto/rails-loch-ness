@@ -1,5 +1,5 @@
 <% conversations.each do |conversation|%>
-<div class="d-flex align-items-center conversation-card mb-3 pl-2">
+<div class="d-flex align-items-center conversation-card mb-3 pl-2" data-aos="fade-up">
   <%= image_tag conversation.monster.user.photo.url, height:80, width: 80, crop: :fill, class: "avatar mr-3" %>
   <div>
     <h5 class="card-title"><%=conversation.monster.user.name.capitalize %> >> <%= conversation.monster.name %></h5>

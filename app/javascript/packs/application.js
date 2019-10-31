@@ -1,15 +1,9 @@
+import AOS from 'aos';
+AOS.init();
 
-// Flatpickr
-// import '../plugins/flatpickr';
-
-
-//mapbox Javascript
 import { initMapbox } from '../plugins/init_mapbox';
-
 initMapbox();
 
-
-// Flatpickr
 import '../plugins/flatpickr';
 
 
