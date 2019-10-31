@@ -76,6 +76,8 @@ Monster.create(
   remote_photo_url: 'https://res.cloudinary.com/syrashid/image/upload/v1572435013/toppng.com-toothless-the-dragon-from-how-to-train-your-dragon-train-your-dragon-toothless-800x435_ka5yv5.png'
 )
 
+print '5% > '
+
 Monster.create(
   address: "637 Chapel St, South Yarra VIC 3141",
   price: rand(70..200),
@@ -84,6 +86,8 @@ Monster.create(
   user: nico,
   remote_photo_url: 'https://vignette.wikia.nocookie.net/great-characters/images/a/a3/The_camera_loves_sheldon.png/revision/latest?cb=20190121234235'
 )
+
+print '10% > '
 
 Monster.create(
   address: "Marathon Way, East Melbourne VIC 3002",
@@ -94,8 +98,10 @@ Monster.create(
   remote_photo_url: 'https://vignette.wikia.nocookie.net/kingdomhearts/images/9/91/Sulley_KHIII.png/revision/latest?cb=20180701021913'
 )
 
-Monster.create(
-  address: "1 Flinders Walk, Melbourne VIC 3000",
+print '15% > '
+
+Monster.create!(
+  address: "21 Bond St, Melbourne VIC 3000",
   price: rand(70..200),
   description: "Randall is greedy, ruthless, sneaky, short-tempered, competitive, and overall evil in nature. As well, Randall is something of a selfish jerk who doesn't care about a lot of people. Judging by his intentions to capture children for their screams (and possibly never return them), he is probably willing to severely harm little kids (or worse).",
   name: 'Randall',
@@ -103,14 +109,18 @@ Monster.create(
   remote_photo_url: 'https://vignette.wikia.nocookie.net/monstersincmovies/images/8/86/Randall.png/revision/latest?cb=20140729143009'
 )
 
-Monster.create(
-  address: "Windsor VIC 3181",
+print '20% > '
+
+Monster.create!(
+  address: "40 The Avenue, Windsor VIC 3181",
   price: rand(70..200),
-  description: "The Light Fury moves as fast as Toothless and shares his ability to blend into the sky — even during daylight hours. With her white coloration, the Light Fury hides seamlessly in clouds, sea fog, and distant horizons. Although skittish and skeptical, the Light Fury also shares Toothless' deep sense of empathy and will always wield her plasma blast to defend any in need. Temporarily transforms each scale into a reflective surface that mirrors the Light Fury’s surroundings, essentially rendering her invisible.",
+  description: "The Light Fury moves as fast as Toothless and shares his ability to blend into the sky — even during daylight hours. With her white coloration, the Light Fury hides seamlessly in clouds, sea fog, and distant horizons. Although skittish and skeptical, the Light Fury also shares Toothless' deep sense of empathy and will always wield her plasma blast to defend any in need.",
   name: 'Light Fury',
   user: sy,
-  remote_photo_url: 'https://vignette.wikia.nocookie.net/howtotrainyourdragon/images/d/d8/THW-Unnamed_Light_Fury-Transparent.png/revision/latest?cb=20190202201459'
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/howtotrainyourdragon/images/a/a6/ROB-LightFury-Transparent.png/revision/latest?cb=20190206044037'
 )
+
+print '25% > '
 
 Monster.create(
   address: "359 Little Bourke St, Melbourne VIC 3000",
@@ -121,14 +131,18 @@ Monster.create(
   remote_photo_url: 'https://www.sideshow.com/storage/product-images/902055/gizmo_gremlins_silo.png'
 )
 
-Monster.create(
-  address: "Brunton Ave, Richmond VIC 3002",
+print '30% > '
+
+Monster.create!(
+  address: "60 Jolimont St, East Melbourne VIC 3002",
   price: rand(70..200),
   description: "Dragonite is capable of circling the globe in just 16 hours. It is a kindhearted Pokémon that leads lost and foundering ships in a storm to the safety of land.",
   name: 'Dragonite',
   user: sy,
   remote_photo_url: 'https://vignette.wikia.nocookie.net/vsbattles/images/5/55/149_gr.png/revision/latest?cb=20180527113545'
 )
+
+print '35% > '
 
 Monster.create(
   address: "College Cres, Parkville VIC 3052",
@@ -139,6 +153,8 @@ Monster.create(
   remote_photo_url: "http://wiki.shoryuken.com/images/5/55/Pokken_Gengar.png"
 )
 
+print '40% > '
+
 Monster.create(
   address: "Port Phillip Bay",
   price: rand(70..200),
@@ -147,6 +163,8 @@ Monster.create(
   user: sy,
   remote_photo_url: 'http://wiki.shoryuken.com/images/9/90/Pokken_Blastoise.png'
 )
+
+print '45% > '
 
 Monster.create(
   address: "Mount Dandenong Victoria 3767",
@@ -157,6 +175,8 @@ Monster.create(
   remote_photo_url: 'https://vignette.wikia.nocookie.net/vsbattles/images/3/35/Charizard_SSBu.png/revision/latest?cb=20180721110519'
 )
 
+print '50% > '
+
 Monster.create(
   address: "957 Healesville-Yarra Glen Rd, Yarra Glen VIC 3775",
   price: rand(70..200),
@@ -166,14 +186,18 @@ Monster.create(
   remote_photo_url: 'https://aff5fa4925746bf9c161-fb36f18ca122a30f6899af8eef8fa39b.ssl.cf5.rackcdn.com/images/Masthead_Bowser.17345b1513ac044897cfc243542899dce541e8dc.9afde10b.png'
 )
 
+print '55% > '
+
 Monster.create(
   address: "Queen St, Melbourne VIC 3000",
   price: rand(70..200),
-  description: "Koopa Troopas are turtle-like creatures with removable shells that come in many different colors, with red and green Koopa Troopas being the most common; green Koopa Troopas usually walk back and forth without any concerns for pits or other obstacles, and red Koopa Troopas usually walk back and forth without falling off of their platforms. ",
+  description: "Koopa Troopas are turtle-like creatures with removable shells that come in many different colors, with red and green Koopa Troopas being the most common; green Koopa Troopas usually walk back and forth without any concerns for pits or other obstacles.",
   name: 'Koopa',
   user: sy,
   remote_photo_url: 'https://www.mariowiki.com/images/thumb/2/2f/Koopa_Troopa_Artwork_-_Super_Mario_3D_World.png/1200px-Koopa_Troopa_Artwork_-_Super_Mario_3D_World.png'
 )
+
+print '60% > '
 
 Monster.create(
   address: "11 The Esplanade, St Kilda VIC 3182",
@@ -184,14 +208,18 @@ Monster.create(
   remote_photo_url: 'https://www.sideshow.com/storage/product-images/904975/wicket_star-wars_silo_sm.png'
 )
 
-Monster.create(
-  address: "328 Swanston St, Melbourne VIC 3000",
+print '65% > '
+
+Monster.create!(
+  address: "Lonsdale St, Melbourne VIC 3000",
   price: rand(70..200),
-  description: "Porgs are a curious sea bird species native to the planet Ahch-To, where Jedi Master Luke Skywalker made his exile in the years following the victory over the Galactic Empire. They are seen in Star Wars: The Last Jedi and are known for how insanely cute they are. The creatures, who dwell on the cliffs of the island where Skywalker lives in exile, could build nests and fly. Male porgs are known to be slightly bigger in size than females; baby porgs are called porglets. A flock of porgs is known as a murder.",
+  description: "Porgs are a curious sea bird species native to the planet Ahch-To. The creatures, who dwell on the cliffs of the island where Skywalker lives in exile, could build nests and fly. Male porgs are known to be slightly bigger in size than females; baby porgs are called porglets. A flock of porgs is known as a murder.",
   name: 'Porg',
   user: sy,
   remote_photo_url: 'https://www.sccpre.cat/mypng/full/4-43404_porgs-were-a-type-of-bird-star-wars.png'
 )
+
+print '70% > '
 
 Monster.create(
   address: "119 Rose St, Fitzroy VIC 3065",
@@ -202,6 +230,8 @@ Monster.create(
   remote_photo_url: 'https://www.models-resource.com/resources/big_icons/6/5053.png'
 )
 
+print '75% > '
+
 Monster.create(
   address: "3 Driver Ln, Melbourne VIC 3000",
   price: rand(70..200),
@@ -211,14 +241,18 @@ Monster.create(
   remote_photo_url: 'https://gallery.withthewill.net/albums/userpics/10002/normal_encountersrender01_patamon.png'
 )
 
+print '80% > '
+
 Monster.create(
   address: "1A Sherbrooke Rd, Sherbrooke VIC 3789",
   price: rand(70..200),
   description: "Blue-Eyes White Dragon was the monster ka spirit of Kisara, although it only emerged while she was in an unconscious state.",
   name: 'Blue Eyes White Dragon',
   user: nico,
-  remote_photo_url: 'https://toppng.com/public/uploads/preview/blue-eyes-white-dragon-115630562201kv4cb87em.png'
+  remote_photo_url: 'https://i.dlpng.com/static/png/6026803-blue-eyes-white-dragon-png-yugioh-blue-eyes-white-dragon-render-blue-eyes-white-dragon-transparent-886_902_preview.png'
 )
+
+print '85% > '
 
 Monster.create(
   address: "157 Lonsdale St, Melbourne VIC 3000",
@@ -229,23 +263,11 @@ Monster.create(
   remote_photo_url: 'https://img.pngio.com/dark-magician-png-render-by-carlos123321-on-deviantart-dark-magician-png-544_544.png'
 )
 
-Monster.create(
-  address: "Esplanade, Brighton VIC 3186",
-  price: rand(70..200),
-  description: "This monster cannot be Normal Summoned or Set. This monster can only be Special Summoned while Toon World is on your side. You can Special Summon this monster from your hand, but Tributes are required for monsters Level 5 or more. When Toon World on the field is destroyed, this monster is also destroyed. If your opponent doesn't control a Toon Monster, this monster can attack your opponent's Life Points directly. If a face-up Toon Monster is on your opponent's side of the field, you must select the Toon Monster as an attack target.",
-  name: 'Blue-Eyes Toon Dragon',
-  user: nico,
-  remote_photo_url: 'https://toppng.com/public/uploads/preview/yugioh-blue-eyes-white-dragon-toon-115502384139zslbbxkhs.png'
-)
+print '90% > '
 
-Monster.create(
-  address: "95 Smith St, Fitzroy VIC 3065",
-  price: rand(70..200),
-  description: "Dark Magician Girl appears as a Duel Spirit during the Duel Festival. On the one day Duel Spirits can take physical form, the Dark Magician Girl surfaces during a school-wide festival to duel with Jaden.",
-  name: 'Dark Magician Girl',
-  user: sy,
-  remote_photo_url: 'https://img.pngio.com/render-dark-magician-girl-png-image-with-transparent-background-dark-magician-girl-png-480_733.png'
-)
+print '95% > '
+
+puts '100% !!!'
 
 printLine
 
@@ -264,13 +286,12 @@ puts 'Creating Reservations'
   )
 end
 
-
 old_reservations = []
 12.times do
   start_time = Time.now - (rand 15..30 * seconds_in_a_day)
   end_time = start_time + (rand 2..14 * seconds_in_a_day)
   monster = Monster.all.sample
-  old_reservations = Reservation.create(
+  old_reservations << Reservation.create(
     status: 'confirmed',
     monster: monster,
     user: User.offset(2).sample,
@@ -284,13 +305,13 @@ printLine
 puts 'Creating Reviews'
 
 Monster.all.each do |monster|
-  4.times do
+  rand(2..7).times do
     Review.create(
       user: User.all.sample,
       monster: monster,
       integer: [1, 2, 3, 4, 5].sample,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      reservation_id: Reservation.all.sample.id
+      reservation_id: old_reservations.sample.id
     )
   end
 end
