@@ -10,10 +10,10 @@
         <img src="<%= @reservation.monster.photo %>" class="w-100 xs" alt="<%= @reservation.monster.name %>">
       </div>
       <div class="p-3 d-flex flex-column justify-content-between">
-        <h5>Rented monster: <strong><%= @reservation.monster.name %></strong></h5>
-        <h5>From: <strong><%= @reservation.start_date %></strong></h5>
-        <h5>To: <strong><%= @reservation.end_date %></strong></h5>
-        <h5>Total price: <strong><%= @reservation.total_price.round %> €</strong></h5>
+        <h5>Rented monster: <br class="br-sx"><strong"><%= @reservation.monster.name %></strong></h5>
+        <h5>From: <strong class="d-flex"><%= @reservation.start_date %></strong></h5>
+        <h5>To: <br class="br-sx"><strong><%= @reservation.end_date %></strong></h5>
+        <h5>Total price: <strong class="d-flex"><%= @reservation.total_price.round %> €</strong></h5>
       </div>
     </div>
   </div>
