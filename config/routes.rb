@@ -14,10 +14,6 @@ Rails.application.routes.draw do
   end
   get '/dashboard', to: 'dashboards#show'
   get '/filter', to: 'monsters#filter'
-  # get '/price_asc', to: 'monsters#price_filter_asc'
-  # get '/price_dsc', to: 'monsters#price_filter_dsc'
-  # get '/reviews_asc', to: 'monsters#review_filter_asc'
-  # get '/reviews_dsc', to: 'monsters#review_filter_dsc'
 
   patch '/reservations/:id/accept', to: 'reservations#accept_reservation', as: :accept
   patch '/reservations/:id/reject', to: 'reservations#reject_reservation', as: :reject
