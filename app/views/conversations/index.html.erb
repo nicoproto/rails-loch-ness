@@ -2,7 +2,7 @@
   <h2>Conversations with owners</h2>
   <div class="col-12 mt-3">
     <% if @conversations.count > 0 %>
-    <div class="cards-container p-0">
+    <div class="p-0">
       <%= render 'shared/conversations_partial', conversations: @conversations%>
     </div>
     <% else %>
@@ -13,7 +13,7 @@
   <h2>Conversations with renters</h2>
   <div class="col-12 mt-3">
     <% if @owner_conversations %>
-    <div class="cards-container p-0">
+    <div class="p-0">
       <%= render 'shared/owner_conversations_partial', conversations: @owner_conversations%>
     </div>
     <% else %>
