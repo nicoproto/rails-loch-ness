@@ -1,16 +1,15 @@
 .mapboxgl-popup {
-  max-width: 200px;
-  color: var(--white);
-
+  max-width: 200px !important;
+  color: var(--white) !important;
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Cabin', sans-serif;
-  background: var(--green);
-  padding-bottom: 5px;
+  text-align: center !important;
+  font-family: 'Cabin', sans-serif !important;
+  background: var(--green) !important;
+  padding-bottom: 5px !important;
 }
 
 .icon-font {
-  color: white;
+  color: white !important;
 }

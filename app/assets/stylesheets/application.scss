@@ -13,10 +13,10 @@
  *= require_tree .
  *= require_self
  */
-@import url("https://fonts.googleapis.com/css?family=Cabin:500,700|Sniglet&display=swap");
+@import 'mapbox-gl/dist/mapbox-gl.css';
 
 @import "bootstrap/scss/bootstrap";
-@import 'mapbox-gl/dist/mapbox-gl.css';
+
 @import "components/index";
 @import "pages/index";
 
@@ -25,19 +25,17 @@
   --green: #315545;
   --white: #FFFFFF;
   --light_grey: #EAEAEA;
-  --headers-font: museo, serif;
-  --body-font: "Cabin";
   --basepx: 6px;
 }
 
 h1, h2, h4, h5 {
   color: var(--green);
-  font-family: var(--headers-font);
+  font-family: 'museo', serif;
   font-weight: 500;
 }
 
 body {
-  font-family: var(--body-font);
+  font-family: 'Cabin', sans-serif;
 }
 
 h2, h4 {
